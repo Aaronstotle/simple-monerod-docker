@@ -1,4 +1,4 @@
-name: "Test build of Ubuntu image when Dockerfile is changed"
+name: "Test multiarch build if Dockerfile is changed"
 on:
   push:
     paths:
@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v2.7.0
         with:
           push: false
-          platform: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64
           tags: monero_multiarch:ubuntu-test
           cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/simple-monerod:ubuntu
       -
