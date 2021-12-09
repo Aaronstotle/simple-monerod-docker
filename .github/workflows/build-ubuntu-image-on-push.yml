@@ -2,12 +2,12 @@ name: "Test multiarch build if Dockerfile is changed"
 on:
   push:
     paths:
-    - 'Dockerfile.Ubuntu'
+    - 'Dockerfile'
     branches-ignore:
     - main
   pull_request:
     paths:
-    - 'Dockerfile.Ubuntu'
+    - 'Dockerfile'
   workflow_dispatch:
 jobs:
   rebuild-container:
